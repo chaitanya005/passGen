@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/passGen.css">
+
+	<title>Pasword Generator</title>
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+	
+	<form action="" name= "passGen">
+        <div  class="col-xs-12">
+	    <input type="text" size = "20" name = "output" class=  "out">
+	    <input type="button" class="btn btn-success btn-block myBtn" value = "GeneratePassword" onclick="populateform(this.form.length.
+	    
+	    value)">  <br>
+	    <br>
+	    <strong class = "pass">Password lenght:</strong><input class = "in"type="text" name="length" value="" size="3"> 
+	
+	</div>
+	</form>
+	
+
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+        var keylist = "abcdefghijklmnopqrstuvwxyz@!$%^#&*()_-+=;><"
+        
+    
+        
+        function generatepass(plength){
+            var tmp = " "
+            for(i = 0;i <plength ; i++){
+            tmp += keylist.charAt(Math.floor(Math.random()*keylist.length))
+        }
+        
+        return tmp
+    }
+        
+        
+        function populateform(enterlength){
+            document.passGen.output.value = generatepass(enterlength)
+        }
+        
+	</script>
+
+</body>
+
+</html>
